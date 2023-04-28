@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>poi_bower_7</title>
+    <g id="poi_bower_7" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(10.000000, 5.000000)">
+            <polygon id="Fill-1" stroke="#FFFFFF" stroke-width="5" points="16.9230769 10 0 17.8571429 0 21 40 21 40 17.8571429 23.0769231 10"></polygon>
+            <rect id="Rectangle" fill="#FFFFFF" x="4" y="20" width="33" height="17"></rect>
+            <polygon id="Fill-2" stroke="#FFFFFF" stroke-width="5" points="20 0 12 5.77777778 12 13 28 13 28 5.77777778"></polygon>
+            <polygon id="Fill-3" stroke="#FFFFFF" stroke-width="5" points="11 37 16 37 16 19 11 19"></polygon>
+            <polygon id="Fill-4" stroke="#FFFFFF" stroke-width="5" points="24 37 29 37 29 19 24 19"></polygon>
+            <polygon id="Fill-5" stroke="#FFFFFF" stroke-width="5" points="0 37 5 37 5 19 0 19"></polygon>
+            <polygon id="Fill-6" stroke="#FFFFFF" stroke-width="5" points="35 37 40 37 40 19 35 19"></polygon>
+            <polygon id="Fill-7" stroke="#FFFFFF" stroke-width="5" points="0 47 40 47 40 35 0 35"></polygon>
+        </g>
+        <g id="Group" transform="translate(10.000000, 5.000000)" fill="#646464">
+            <polygon id="Fill-1" points="16.9230769 10 0 17.8571429 0 21 40 21 40 17.8571429 23.0769231 10"></polygon>
+            <polygon id="Fill-2" points="20 0 12 5.77777778 12 13 28 13 28 5.77777778"></polygon>
+            <polygon id="Fill-3" points="11 37 16 37 16 19 11 19"></polygon>
+            <polygon id="Fill-4" points="24 37 29 37 29 19 24 19"></polygon>
+            <polygon id="Fill-5" points="0 37 5 37 5 19 0 19"></polygon>
+            <polygon id="Fill-6" points="35 37 40 37 40 19 35 19"></polygon>
+            <polygon id="Fill-7" points="0 47 40 47 40 35 0 35"></polygon>
+        </g>
+    </g>
+</svg>

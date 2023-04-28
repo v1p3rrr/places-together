@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80px" height="80px" viewBox="0 0 80 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>poi_attraction_i</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-277.000000, -494.000000)">
+            <g id="poi_attraction_i" transform="translate(277.000000, 494.000000)">
+                <circle id="Oval-Shadow-1" fill-opacity="0.02" fill="#000000" cx="40" cy="40" r="40"></circle>
+                <circle id="Oval-Shadow-2" fill-opacity="0.02" fill="#000000" cx="40" cy="40" r="38"></circle>
+                <circle id="Oval-Shadow-3" fill-opacity="0.02" fill="#000000" cx="40" cy="40" r="36"></circle>
+                <circle id="Oval-Shadow-4" fill-opacity="0.02" fill="#000000" cx="40" cy="40" r="34"></circle>
+                <path d="M40,72 C57.6731,72 72,57.6731 72,40 C72,22.3269 57.6731,8 40,8 C22.3269,8 8,22.3269 8,40 C8,57.6731 22.3269,72 40,72 Z" id="Path" fill="#F28B3D" fill-rule="nonzero"></path>
+                <path d="M31.4319,27.2724 L31,29 L26,29 C24.3431,29 23,30.3431 23,32 L23,50 C23,51.6569 24.3431,53 26,53 L54,53 C55.6569,53 57,51.6569 57,50 L57,32 C57,30.3431 55.6569,29 54,29 L49,29 L48.5681,27.2724 C48.2342,25.9369 47.0343,25 45.6577,25 L34.3423,25 C32.9657,25 31.7658,25.9369 31.4319,27.2724 Z M40,49 C44.4183,49 48,45.4183 48,41 C48,36.5817 44.4183,33 40,33 C35.5817,33 32,36.5817 32,41 C32,45.4183 35.5817,49 40,49 Z" id="Shape" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>

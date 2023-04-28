@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="116px" height="116px" viewBox="0 0 116 116" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>poi_parking_meter</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-594.000000, -187.000000)">
+            <g id="poi_parking_meter" transform="translate(594.000000, 187.000000)">
+                <circle id="Oval-Shadow-1" fill-opacity="0.02" fill="#000000" cx="58" cy="58" r="58"></circle>
+                <circle id="Oval-Shadow-2" fill-opacity="0.02" fill="#000000" cx="58" cy="58" r="56"></circle>
+                <circle id="Oval-Shadow-3" fill-opacity="0.02" fill="#000000" cx="58" cy="58" r="54"></circle>
+                <circle id="Oval-Shadow-4" fill-opacity="0.02" fill="#000000" cx="58" cy="58" r="52"></circle>
+                <path d="M58,108 C85.6142,108 108,85.6142 108,58 C108,30.3858 85.6142,8 58,8 C30.3858,8 8,30.3858 8,58 C8,85.6142 30.3858,108 58,108 Z" id="Path" fill="#FFFFFF" fill-rule="nonzero"></path>
+                <path d="M40,33 C40,31.8954 40.8954,31 42,31 L74,31 C75.1046,31 76,31.8954 76,33 L76,83 C76,84.1046 75.1046,85 74,85 L68,85 L68,76 C69.6569,76 71,74.6569 71,73 C71,71.3432 69.6569,70 68,70 L48,70 C46.3431,70 45,71.3432 45,73 C45,74.6569 46.3431,76 48,76 L48,85 L42,85 C40.8954,85 40,84.1046 40,83 L40,33 Z M48,39 L59.5,39 C64.1944,39 68,42.8056 68,47.5 C68,52.1944 64.1944,56 59.5,56 L52,56 L52,64 L48,64 L48,39 Z M59.5,43 L52,43 L52,52 L59.5,52 C61.9853,52 64,49.9853 64,47.5 C64,45.0147 61.9853,43 59.5,43 Z M64,74 L52,74 L52,88 L64,88 L64,74 Z" id="Shape" fill="#72B8EB"></path>
+            </g>
+        </g>
+    </g>
+</svg>
