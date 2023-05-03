@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:background="@color/background"
     android:padding="@dimen/activity_margin"
-    tools:context=".ui.login_screen.LoginFragment">
+    tools:context=".ui.registration_screen.RegistrationFragment">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/username_field"
@@ -55,22 +55,34 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <TextView
-        android:id="@+id/forgot_password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/forgot_password"
-        android:textColor="@color/primary_light"
-        android:textSize="@dimen/text_size_small"
-        app:layout_constraintStart_toStartOf="@+id/password_field"
-        app:layout_constraintTop_toBottomOf="@id/password_field"
-        app:layout_constraintWidth_percent="0.8" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/login_button"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/password_repeat_field"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/login_button_text"
+        android:hint="@string/password_repeat_hint"
+        app:boxStrokeColor="@color/primary_light"
+        app:hintTextColor="@color/primary_light"
+        app:layout_constraintWidth_percent="0.8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/password_field"
+        android:layout_marginTop="@dimen/margin_small">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/password_repeat_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:textColor="@color/on_background"
+            android:maxLines="1" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/register_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/register_button_text"
         android:textAllCaps="false"
         android:textSize="@dimen/text_size_medium"
         android:padding="@dimen/button_padding"
@@ -83,7 +95,7 @@
         app:layout_constraintWidth_percent="0.7"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/forgot_password"
+        app:layout_constraintTop_toBottomOf="@id/password_repeat_field"
         android:layout_marginTop="@dimen/margin_small"
         app:layout_constraintVertical_bias="0.1" />
 

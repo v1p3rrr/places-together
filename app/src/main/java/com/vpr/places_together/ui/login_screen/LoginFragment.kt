@@ -11,11 +11,10 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.vpr.places_together.R
 import com.vpr.places_together.databinding.FragmentLoginBinding
-import com.vpr.places_together.ui.CustomMenuProvider
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class LoginFragment: Fragment(), CustomMenuProvider {
+class LoginFragment: Fragment() {
     private val viewModel: LoginViewModel by viewModels()
     private lateinit var binding: FragmentLoginBinding
 
@@ -31,14 +30,6 @@ class LoginFragment: Fragment(), CustomMenuProvider {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-    }
-
-    override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
-        TODO("Not yet implemented")
-    }
-
-    override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
-        TODO("Not yet implemented")
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

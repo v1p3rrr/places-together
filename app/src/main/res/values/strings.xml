@@ -1,8 +1,19 @@
 <resources>
     <string name="app_name">Places Together</string>
 
-    <string name="username">Username</string>
-    <string name="password">Password</string>
-    <string name="login">Login</string>
+    <string name="username_hint">Username</string>
+    <string name="password_hint">Password</string>
+    <string name="status_hint">Status</string>
+    <string name="password_repeat_hint">Repeat password</string>
+    <string name="login_button_text">Login</string>
+    <string name="register_button_text">Register</string>
     <string name="forgot_password">Forgot password?</string>
+
+
+    <!-- Snackbar -->
+    <string name="snackbar_message_example">This is an example message.</string>
+    <string name="snackbar_action_undo">Undo</string>
+
+    <!-- Toast -->
+    <string name="toast_message_example">This is an example message.</string>
 </resources>
