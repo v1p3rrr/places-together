@@ -4,8 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:theme="@style/Theme.PlacesTogether"
     android:padding="@dimen/activity_margin"
+    android:theme="@style/Theme.PlacesTogether"
     tools:context=".ui.login_screen.LoginFragment">
 
     <com.google.android.material.textfield.TextInputLayout
@@ -33,12 +33,12 @@
         android:id="@+id/password_field"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
         android:hint="@string/password_hint"
-        app:layout_constraintWidth_percent="0.8"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/username_field"
-        android:layout_marginTop="@dimen/margin_small">
+        app:layout_constraintWidth_percent="0.8">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/password_edittext"
@@ -63,30 +63,41 @@
         android:id="@+id/login_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:elevation="@dimen/button_elevation"
+        android:padding="@dimen/button_padding"
+        android:stateListAnimator="@null"
         android:text="@string/login_button_text"
         android:textAllCaps="false"
         android:textSize="@dimen/text_size_medium"
-        android:padding="@dimen/button_padding"
-        android:elevation="@dimen/button_elevation"
-        android:stateListAnimator="@null"
         app:cornerRadius="@dimen/button_corner_radius"
-        app:layout_constraintWidth_percent="0.7"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/forgot_password"
+        app:layout_constraintVertical_bias="0.1"
+        app:layout_constraintWidth_percent="0.7" />
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/google_login_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:layout_marginTop="@dimen/margin_small"
-        app:layout_constraintVertical_bias="0.1" />
+        android:elevation="@dimen/button_elevation"
+        android:textSize="@dimen/text_size_medium"
+        app:layout_constraintEnd_toEndOf="@+id/login_button"
+        app:layout_constraintStart_toStartOf="@+id/login_button"
+        app:layout_constraintTop_toBottomOf="@+id/login_button" />
 
     <TextView
         android:id="@+id/create_account"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
         android:text="@string/create_account"
         android:textSize="@dimen/text_size_small"
-        android:layout_marginTop="@dimen/margin_medium"
         app:layout_constraintEnd_toEndOf="@+id/login_button"
         app:layout_constraintStart_toStartOf="@+id/login_button"
-        app:layout_constraintTop_toBottomOf="@+id/login_button"
-        app:layout_constraintWidth_percent="0.8" />
+        app:layout_constraintTop_toBottomOf="@+id/google_login_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

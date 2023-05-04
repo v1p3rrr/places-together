@@ -7,7 +7,7 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.os.bundleOf
+import android.widget.TextView
 import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
@@ -42,8 +42,8 @@ class LoginFragment : Fragment() {
 
     private fun setupMenu() {
         val toolbar = requireActivity().findViewById<MaterialToolbar>(R.id.top_app_bar)
-        toolbar.setNavigationIcon(R.drawable.ic_arrow_back)
-        toolbar.title = getString(R.string.sign_in)
+        toolbar.navigationIcon = null
+        toolbar.title = getString(R.string.sign_in_screen_title)
         toolbar.setNavigationOnClickListener {
             println("back btn pressed")
             //todo pass username password when navigation to reg screen
@@ -87,6 +87,13 @@ class LoginFragment : Fragment() {
         binding.createAccount.setOnClickListener{
             //todo pass username password when navigation to reg screen
             navController.navigate(R.id.action_login_fragment_to_registration_fragment)
+        }
+
+        val googleButtonText = binding.googleLoginButton.getChildAt(0) as? TextView
+        googleButtonText?.text = getString(R.string.sign_in_google)
+
+        binding.googleLoginButton.setOnClickListener {
+            println("login via google")
         }
 
     }

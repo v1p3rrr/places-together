@@ -11,11 +11,19 @@
     <string name="create_account">Don\'t have account? <font color="#904279">Sign up</font></string>
     <string name="account_exists">Already have account? <font color="#904279">Sign in</font></string>
 
+    <string name="edit_profile_screen_title">Edit Profile</string>
+    <string name="sign_in_screen_title">Sign In</string>
+    <string name="sign_up_screen_title">Sign Up</string>
+    <string name="friends_screen_title">Friends</string>
+    <string name="group_default_screen_title">Group of people</string>
+    <string name="groups_screen_title">Your groups</string>
 
 
-    <string name="edit_profile">Edit Profile</string>
-    <string name="sign_in">Sign In</string>
-    <string name="sign_up">Sign Up</string>
+    <string name="sign_in_google">Sign in with google</string>
+    <string name="sign_up_google">Sign up with google</string>
+
+    <string name="username_mock">Username</string>
+    <string name="group_mock">Group of people</string>
 
 
     <!-- Snackbar -->
@@ -28,4 +36,10 @@
 
     <string name="done">Done</string>
     <string name="back">Back</string>
+    <string name="icon_remove_friend_desc">Icon Remove Friend</string>
+    <string name="friend_avatar_desc">Friend\'s Avatar</string>
+    <string name="group_participant_avatar_desc">Group Participant\'s Avatar</string>
+    <string name="icon_of_moderator_status_desc">Icon Of Moderator Status</string>
+    <string name="icon_to_remove_user_from_group_desc">Icon To Remove User From Group</string>
+    <string name="icon_to_leave_from_group_desc">Icon To Leave From Group</string>
 </resources>
