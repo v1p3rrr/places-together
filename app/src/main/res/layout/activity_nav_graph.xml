@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:theme="@style/Theme.PlacesTogether"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/nav_graph_activity"
@@ -15,10 +16,9 @@
         android:id="@+id/top_app_bar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/background"
-        app:menu="@menu/menu_done_or_back"
-        app:navigationIcon="@drawable/ic_menu"
-        app:title="@string/app_name" />
+        app:menu="@menu/menu_done"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:title="@string/app_name"/>
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/nav_host_fragment"

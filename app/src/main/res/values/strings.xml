@@ -8,6 +8,14 @@
     <string name="login_button_text">Login</string>
     <string name="register_button_text">Register</string>
     <string name="forgot_password">Forgot password?</string>
+    <string name="create_account">Don\'t have account? <font color="#904279">Sign up</font></string>
+    <string name="account_exists">Already have account? <font color="#904279">Sign in</font></string>
+
+
+
+    <string name="edit_profile">Edit Profile</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
 
 
     <!-- Snackbar -->
@@ -16,4 +24,8 @@
 
     <!-- Toast -->
     <string name="toast_message_example">This is an example message.</string>
+
+
+    <string name="done">Done</string>
+    <string name="back">Back</string>
 </resources>

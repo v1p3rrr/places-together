@@ -11,8 +11,47 @@
         android:label="Login"
         tools:layout="@layout/fragment_login">
 
+        <argument
+            android:name="username"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="password"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true"/>
+
         <action
             android:id="@+id/action_login_fragment_to_map_fragment"
+            app:destination="@id/map_fragment" />
+        <action
+            android:id="@+id/action_login_fragment_to_registration_fragment"
+            app:destination="@id/registration_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registration_fragment"
+        android:name="com.vpr.places_together.ui.registration_screen.RegistrationFragment"
+        android:label="Registration"
+        tools:layout="@layout/fragment_registration">
+
+        <argument
+            android:name="username"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="password"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true"/>
+
+        <action
+            android:id="@+id/action_registration_fragment_to_login_fragment"
+            app:destination="@id/login_fragment" />
+        <action
+            android:id="@+id/action_registration_fragment_to_map_fragment"
             app:destination="@id/map_fragment" />
     </fragment>
 
