@@ -7,6 +7,7 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.SearchView
 import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
@@ -52,13 +53,40 @@ class FriendsFragment: Fragment() {
         (requireActivity() as MenuHost).addMenuProvider(object : MenuProvider {
             override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
                 menu.clear()
-                menuInflater.inflate(R.menu.menu_done, menu)
+                menuInflater.inflate(R.menu.menu_search, menu)
+                val searchItem = menu.findItem(R.id.action_search)
+                val searchView = searchItem.actionView as SearchView
+
+                searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+                    override fun onQueryTextSubmit(query: String?): Boolean {
+                        // Handle search query submission
+                        return true
+                    }
+
+                    override fun onQueryTextChange(newText: String?): Boolean {
+                        // Handle search query text change
+                        return true
+                    }
+                })
+
+                searchView.setOnSearchClickListener {
+                    toolbar.title = null
+                    toolbar.isTitleCentered = false
+                }
+
+                searchView.setOnCloseListener {
+                    toolbar.title = getString(R.string.friends_screen_title)
+                    toolbar.isTitleCentered = true
+                    false
+                }
+
+                searchView.queryHint = getString(R.string.search_hint)
+
             }
 
             override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
                 return when (menuItem.itemId) {
-                    R.id.action_done -> {
-                        println("clicked on done btn")
+                    R.id.action_search -> {
                         true
                     }
 

@@ -4,6 +4,7 @@
     <string name="username_hint">Username</string>
     <string name="password_hint">Password</string>
     <string name="status_hint">Status</string>
+    <string name="search_hint">Search</string>
     <string name="password_repeat_hint">Repeat password</string>
     <string name="login_button_text">Login</string>
     <string name="register_button_text">Register</string>
@@ -42,4 +43,5 @@
     <string name="icon_of_moderator_status_desc">Icon Of Moderator Status</string>
     <string name="icon_to_remove_user_from_group_desc">Icon To Remove User From Group</string>
     <string name="icon_to_leave_from_group_desc">Icon To Leave From Group</string>
+    <string name="search">Search</string>
 </resources>
