@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.appbar.MaterialToolbar
 import com.vpr.places_together.R
 import com.vpr.places_together.databinding.FragmentGroupListBinding
@@ -24,6 +25,9 @@ class GroupsListFragment: Fragment() {
     private val viewModel: GroupsListViewModel by viewModels()
     private lateinit var binding: FragmentGroupListBinding
     private lateinit var navController: NavController
+    private lateinit var adapter: GroupsListAdapter
+    private lateinit var searchView: SearchView
+    private var unfilteredList: List<String> = arrayListOf()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -38,6 +42,7 @@ class GroupsListFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
         navController = findNavController()
         setupMenu()
+        setAdapter()
         setListeners()
     }
 
@@ -103,7 +108,50 @@ class GroupsListFragment: Fragment() {
         })
     }
 
+    private fun setAdapter() {
+        adapter = GroupsListAdapter{ groupId -> groupId.apply { onGroupSelect(groupId) } }
+        //todo collect flow
+        binding.groupRecyclerView.apply {
+            adapter = adapter
+            layoutManager = LinearLayoutManager(requireContext())
+        }
+    }
+
+    private fun onGroupSelect(id: Long) {
+        val directions = GroupsListFragmentDirections.actionGroupsListFragmentToGroupFragment(id)
+        searchView.setQuery("", false)
+        navController.navigate(directions)
+    }
+
     private fun setListeners() {
 
+    }
+
+    fun filterGroupsInRecycler(query: CharSequence?) {
+        val list = mutableListOf<String>() //todo group entity
+        val queryList = query?.split(Regex("\\W"))
+
+        // perform the data filtering
+        if (query.isNullOrEmpty()) {
+            list.addAll(unfilteredList)
+        } else {
+            list.addAll(unfilteredList.filter {
+                checkQueryEntry(it, queryList)
+            })
+        }
+        adapter.submitList(list)
+    }
+
+    private fun checkQueryEntry(group: String, queryList: List<String>?) : Boolean{
+        queryList?.let {
+            for (queryWord in it) {
+                queryWord.let {
+                    //if (!(group.name.contains(queryWord, ignoreCase = true)))
+                    return false
+                }
+            }
+            return true
+        }
+        return false
     }
 }

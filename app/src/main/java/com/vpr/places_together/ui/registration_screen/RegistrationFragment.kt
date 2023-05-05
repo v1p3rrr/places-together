@@ -82,7 +82,8 @@ class RegistrationFragment: Fragment() {
 
         binding.accountExists.setOnClickListener{
             //todo pass username password when navigation to login screen
-            navController.navigate(R.id.action_registration_fragment_to_login_fragment)
+            val directions = RegistrationFragmentDirections.actionRegistrationFragmentToLoginFragment()
+            navController.navigate(directions)
         }
 
         val googleButtonText = binding.googleRegisterButton.getChildAt(0) as? TextView

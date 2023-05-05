@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.appbar.MaterialToolbar
 import com.vpr.places_together.R
 import com.vpr.places_together.databinding.FragmentFriendsBinding
@@ -24,6 +25,9 @@ class FriendsFragment: Fragment() {
     private val viewModel: FriendsViewModel by viewModels()
     private lateinit var binding: FragmentFriendsBinding
     private lateinit var navController: NavController
+    private lateinit var adapter: FriendsAdapter
+    private lateinit var searchView: SearchView
+    private var unfilteredList: List<String> = arrayListOf()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -38,6 +42,7 @@ class FriendsFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
         navController = findNavController()
         setupMenu()
+        setAdapter()
         setListeners()
     }
 
@@ -55,7 +60,7 @@ class FriendsFragment: Fragment() {
                 menu.clear()
                 menuInflater.inflate(R.menu.menu_search, menu)
                 val searchItem = menu.findItem(R.id.action_search)
-                val searchView = searchItem.actionView as SearchView
+                searchView = searchItem.actionView as SearchView
 
                 searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
                     override fun onQueryTextSubmit(query: String?): Boolean {
@@ -104,5 +109,46 @@ class FriendsFragment: Fragment() {
 
     private fun setListeners() {
 
+    }
+
+    private fun setAdapter() {
+        adapter = FriendsAdapter{ friendId -> friendId.apply { onRemoveFriendClick(friendId) } }
+        //todo collect flow
+        binding.groupRecyclerView.apply {
+            adapter = adapter
+            layoutManager = LinearLayoutManager(requireContext())
+        }
+    }
+
+    private fun onRemoveFriendClick(id: String) { //todo id: Long
+
+    }
+
+    fun filterFriendsInRecycler(query: CharSequence?) {
+        val list = mutableListOf<String>() //todo friend entity
+        val queryList = query?.split(Regex("\\W"))
+
+        // perform the data filtering
+        if (query.isNullOrEmpty()) {
+            list.addAll(unfilteredList)
+        } else {
+            list.addAll(unfilteredList.filter {
+                checkQueryEntry(it, queryList)
+            })
+        }
+        adapter.submitList(list)
+    }
+
+    private fun checkQueryEntry(friend: String, queryList: List<String>?) : Boolean{
+        queryList?.let {
+            for (queryWord in it) {
+                queryWord.let {
+                    //if (!(friend.name.contains(queryWord, ignoreCase = true)))
+                        return false
+                }
+            }
+            return true
+        }
+        return false
     }
 }

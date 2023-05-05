@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.vpr.places_together.R
 import com.vpr.places_together.ui.friends_screen.FriendsAdapter
 
-class GroupsListAdapter(private val onItemClick: (id: String) -> Long) : //todo change to onItemClick: (id: Long) -> Long)
+class GroupsListAdapter(private val onItemClick: (id: Long) -> Long) : //todo change to onItemClick: (id: Long) -> Long)
     ListAdapter<String, GroupsListAdapter.MyViewHolder>(DiffCallback()) {
 
     inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -26,7 +26,8 @@ class GroupsListAdapter(private val onItemClick: (id: String) -> Long) : //todo 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.groupName.text = getItem(position)
         holder.itemView.setOnClickListener {
-            onItemClick(getItem(holder.layoutPosition))
+            //onItemClick(getItem(holder.layoutPosition).id)
+            onItemClick(1) //todo
         }
     }
 

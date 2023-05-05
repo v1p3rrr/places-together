@@ -72,6 +72,80 @@
         <action
             android:id="@+id/action_map_fragment_to_login_fragment"
             app:destination="@id/login_fragment" />
+        <action
+            android:id="@+id/action_map_fragment_to_friends_fragment"
+            app:destination="@id/friends_fragment" />
+        <action
+            android:id="@+id/action_map_fragment_to_groups_list_fragment"
+            app:destination="@id/groups_list_fragment" />
+        <action
+            android:id="@+id/action_map_fragment_to_group_fragment"
+            app:destination="@id/group_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/friends_fragment"
+        android:name="com.vpr.places_together.ui.friends_screen.FriendsFragment"
+        android:label="Friends"
+        tools:layout="@layout/fragment_friends">
+
+        <action
+            android:id="@+id/action_friends_fragment_to_login_fragment"
+            app:destination="@id/login_fragment" />
+        <action
+            android:id="@+id/action_friends_fragment_to_groups_list_fragment"
+            app:destination="@id/groups_list_fragment" />
+        <action
+            android:id="@+id/action_friends_fragment_to_map_fragment"
+            app:destination="@id/map_fragment" />
+        <action
+            android:id="@+id/action_friends_fragment_to_group_fragment"
+            app:destination="@id/group_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/groups_list_fragment"
+        android:name="com.vpr.places_together.ui.groups_list_screen.GroupsListFragment"
+        android:label="GroupsList"
+        tools:layout="@layout/fragment_group_list">
+
+        <action
+            android:id="@+id/action_groups_list_fragment_to_login_fragment"
+            app:destination="@id/login_fragment" />
+        <action
+            android:id="@+id/action_groups_list_fragment_to_friends_fragment"
+            app:destination="@id/friends_fragment" />
+        <action
+            android:id="@+id/action_groups_list_fragment_to_map_fragment"
+            app:destination="@id/map_fragment" />
+        <action
+            android:id="@+id/action_groups_list_fragment_to_group_fragment"
+            app:destination="@id/group_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/group_fragment"
+        android:name="com.vpr.places_together.ui.group_screen.GroupFragment"
+        android:label="Group"
+        tools:layout="@layout/fragment_group">
+
+        <argument
+            android:name="id"
+            app:argType="long"
+            app:nullable="false" />
+
+        <action
+            android:id="@+id/action_group_fragment_to_login_fragment"
+            app:destination="@id/login_fragment" />
+        <action
+            android:id="@+id/action_group_fragment_to_map_fragment"
+            app:destination="@id/map_fragment" />
+        <action
+            android:id="@+id/action_group_fragment_to_friends_fragment"
+            app:destination="@id/friends_fragment" />
+        <action
+            android:id="@+id/action_group_fragment_to_groups_list_fragment"
+            app:destination="@id/groups_list_fragment" />
     </fragment>
 
 </navigation>

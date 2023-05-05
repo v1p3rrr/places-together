@@ -6,6 +6,7 @@
     <string name="status_hint">Status</string>
     <string name="search_hint">Search</string>
     <string name="password_repeat_hint">Repeat password</string>
+    <string name="group_name_hint">Group name</string>
     <string name="login_button_text">Login</string>
     <string name="register_button_text">Register</string>
     <string name="forgot_password">Forgot password?</string>

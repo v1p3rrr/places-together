@@ -13,16 +13,18 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.appbar.MaterialToolbar
 import com.vpr.places_together.R
 import com.vpr.places_together.databinding.FragmentGroupBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class GroupFragment: Fragment() {
+class GroupFragment : Fragment() {
     private val viewModel: GroupViewModel by viewModels()
     private lateinit var binding: FragmentGroupBinding
     private lateinit var navController: NavController
+    private lateinit var adapter: GroupParticipantsAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -37,6 +39,7 @@ class GroupFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
         navController = findNavController()
         setupMenu()
+        setAdapter()
         setListeners()
     }
 
@@ -77,4 +80,30 @@ class GroupFragment: Fragment() {
     private fun setListeners() {
 
     }
+
+    private fun setAdapter() {
+        adapter = GroupParticipantsAdapter(
+            onModeratorStatusClick = { id ->
+                onModeratorStatusClick(id)
+            }
+        ) { id ->
+            onRemoveParticipantClick(id)
+        }
+        //todo collect flow
+
+        //todo programmatically add "add user" element to the list
+        binding.groupRecyclerView.apply {
+            adapter = adapter
+            layoutManager = LinearLayoutManager(requireContext())
+        }
+    }
+
+    private fun onModeratorStatusClick(id: Long) {
+
+    }
+
+    private fun onRemoveParticipantClick(id: Long) {
+
+    }
+
 }
