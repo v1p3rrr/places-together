@@ -10,33 +10,33 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.vpr.places_together.R
 
-class GroupParticipantsAdapter(
+class GroupMembersAdapter(
     private val onModeratorStatusClick: (id: Long) -> Unit,
-    private val onRemoveParticipantClick: (id: Long) -> Unit
+    private val onRemoveMemberClick: (id: Long) -> Unit
 ) : //todo change to onItemClick: (id: Long) -> Long)
-    ListAdapter<String, GroupParticipantsAdapter.MyViewHolder>(DiffCallback()) {
+    ListAdapter<String, GroupMembersAdapter.MyViewHolder>(DiffCallback()) {
 
     inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val participantUsername: TextView = itemView.findViewById(R.id.participant_username_tv)
+        val memberUsername: TextView = itemView.findViewById(R.id.member_username_tv)
         val moderatorIcon: ImageView = itemView.findViewById(R.id.icon_moderator)
-        val removeParticipantIcon: ImageView = itemView.findViewById(R.id.icon_remove_person_from_group)
+        val removeMemberIcon: ImageView = itemView.findViewById(R.id.icon_remove_person_from_group)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_participant, parent, false)
+            .inflate(R.layout.item_member, parent, false)
         return MyViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.participantUsername.text = getItem(position)
+        holder.memberUsername.text = getItem(position)
         holder.moderatorIcon.setOnClickListener {
             //onModeratorStatusClick(getItem(holder.layoutPosition).id)
             onModeratorStatusClick(1) //todo
         }
-        holder.removeParticipantIcon.setOnClickListener {
-            //onRemoveParticipantClick(getItem(holder.layoutPosition).id)
-            onRemoveParticipantClick(1)
+        holder.removeMemberIcon.setOnClickListener {
+            //onRemoveMemberClick(getItem(holder.layoutPosition).id)
+            onRemoveMemberClick(1)
         }
     }
 

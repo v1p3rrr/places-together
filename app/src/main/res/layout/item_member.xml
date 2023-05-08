@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:layout_marginBottom="1dp"
     android:background="@color/seed"
-    android:id="@+id/participant_element">
+    android:id="@+id/member_element">
 
     <ImageView
         android:id="@+id/avatar_image"
@@ -20,11 +20,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/group_participant_avatar_desc" />
+        android:contentDescription="@string/group_member_avatar_desc" />
 
     <!-- Username text -->
     <TextView
-        android:id="@+id/participant_username_tv"
+        android:id="@+id/member_username_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="start|center_vertical"

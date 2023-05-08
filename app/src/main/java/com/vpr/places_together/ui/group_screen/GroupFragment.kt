@@ -24,7 +24,7 @@ class GroupFragment : Fragment() {
     private val viewModel: GroupViewModel by viewModels()
     private lateinit var binding: FragmentGroupBinding
     private lateinit var navController: NavController
-    private lateinit var adapter: GroupParticipantsAdapter
+    private lateinit var adapter: GroupMembersAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -82,12 +82,12 @@ class GroupFragment : Fragment() {
     }
 
     private fun setAdapter() {
-        adapter = GroupParticipantsAdapter(
+        adapter = GroupMembersAdapter(
             onModeratorStatusClick = { id ->
                 onModeratorStatusClick(id)
             }
         ) { id ->
-            onRemoveParticipantClick(id)
+            onRemoveMemberClick(id)
         }
         //todo collect flow
 
@@ -102,7 +102,7 @@ class GroupFragment : Fragment() {
 
     }
 
-    private fun onRemoveParticipantClick(id: Long) {
+    private fun onRemoveMemberClick(id: Long) {
 
     }
 

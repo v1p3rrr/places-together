@@ -40,7 +40,7 @@
     <string name="back">Back</string>
     <string name="icon_remove_friend_desc">Icon Remove Friend</string>
     <string name="friend_avatar_desc">Friend\'s Avatar</string>
-    <string name="group_participant_avatar_desc">Group Participant\'s Avatar</string>
+    <string name="group_member_avatar_desc">Group Member\'s Avatar</string>
     <string name="icon_of_moderator_status_desc">Icon Of Moderator Status</string>
     <string name="icon_to_remove_user_from_group_desc">Icon To Remove User From Group</string>
     <string name="icon_to_leave_from_group_desc">Icon To Leave From Group</string>

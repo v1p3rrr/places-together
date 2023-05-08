@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:clipToPadding="true"
                 android:paddingVertical="@dimen/padding_small"
-                tools:listitem="@layout/item_participant" />
+                tools:listitem="@layout/item_member" />
 
         </androidx.core.widget.NestedScrollView>
 
