@@ -12,4 +12,14 @@ interface GroupMembershipDao {
 
     @Query("SELECT * FROM group_memberships WHERE groupMembershipId = :id")
     suspend fun getById(id: Long): GroupMembershipEntity?
+
+    @Query("SELECT * FROM group_memberships WHERE group_id = :groupId")
+    suspend fun getByGroupId(groupId: Long): List<GroupMembershipEntity>
+
+    @Query("SELECT * FROM group_memberships WHERE profile_id = :profileId")
+    suspend fun getByProfileId(profileId: Long): List<GroupMembershipEntity>
+
+    @Query("SELECT * FROM group_memberships WHERE group_id = :groupId AND profile_id = :profileId")
+    suspend fun getByGroupIdAndProfileId(groupId: Long, profileId: Long): GroupMembershipEntity?
+
 }

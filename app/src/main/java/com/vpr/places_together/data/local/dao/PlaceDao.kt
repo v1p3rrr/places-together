@@ -18,4 +18,16 @@ interface PlaceDao {
 
     @Query("SELECT * FROM places WHERE longitude BETWEEN :minLongitude AND :maxLongitude AND latitude BETWEEN :minLatitude AND :maxLatitude")
     suspend fun getByLocation(minLongitude: Long, maxLongitude: Long, minLatitude: Long, maxLatitude: Long): List<PlaceEntity>
+
+    @Query("SELECT * FROM places WHERE name = :name LIMIT 1")
+    suspend fun getByName(name: String): PlaceEntity?
+
+    @Query("SELECT * FROM places WHERE address = :address")
+    suspend fun getByAddress(address: String): List<PlaceEntity>
+
+    @Query("SELECT * FROM places WHERE type = :type")
+    suspend fun getByType(type: String): List<PlaceEntity>
+
+    @Query("SELECT * FROM places WHERE name LIKE '%' || :partOfName || '%'")
+    suspend fun getByNameContaining(partOfName: String): List<PlaceEntity>
 }

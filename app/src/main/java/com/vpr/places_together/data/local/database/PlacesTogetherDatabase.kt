@@ -6,6 +6,8 @@ import androidx.room.TypeConverters
 import com.vpr.places_together.data.local.dao.*
 import com.vpr.places_together.data.local.entity.*
 import com.vpr.places_together.data.local.typeconverter.LocalDateTimeConverter
+import com.vpr.places_together.data.local.typeconverter.FriendshipStatusTypeConverter
+
 
 @Database(
     entities = [
@@ -23,7 +25,7 @@ import com.vpr.places_together.data.local.typeconverter.LocalDateTimeConverter
     version = 1,
     exportSchema = false
 )
-@TypeConverters(LocalDateTimeConverter::class)
+@TypeConverters(LocalDateTimeConverter::class, FriendshipStatusTypeConverter::class)
 abstract class PlacesTogetherDatabase : RoomDatabase() {
     abstract fun accountDao(): AccountDao
     abstract fun profileDao(): ProfileDao
