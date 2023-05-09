@@ -43,7 +43,37 @@ object AppModule {
 
     private const val BASE_URL = "http://localhost:8080/"
 
-   
+    @Singleton
+    @Provides
+    fun provideAuthRepository(service: AuthService): AuthRepository =
+        AuthRepositoryImpl(apiService = service)
+
+    @Provides
+    @Singleton
+    fun provideGoogleSignInService(@ApplicationContext context: Context): GoogleSignInService {
+        return GoogleSignInService(context)
+    }
+
+    @Provides
+    @Singleton
+    fun provideGso(@ApplicationContext context: Context): GoogleSignInOptions =
+        GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestEmail()
+            .requestIdToken(BuildConfig.WEB_CLIENT_ID)
+            .build()
+
+    @Provides
+    @Singleton
+    fun provideGoogleSignInClient(
+        @ApplicationContext context: Context,
+        gso: GoogleSignInOptions
+    ): GoogleSignInClient =
+        GoogleSignIn.getClient(context, gso)
+
+    @Provides
+    @Singleton
+    fun provideSessionManager(@ApplicationContext context: Context): SessionManager =
+        SessionManager(context)
 
     @Singleton
     @Provides
