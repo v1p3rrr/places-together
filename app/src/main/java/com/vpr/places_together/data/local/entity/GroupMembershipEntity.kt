@@ -5,6 +5,7 @@ import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.Index
 import androidx.room.PrimaryKey
+import com.vpr.places_together.utils.enums.GroupMemberRole
 
 @Entity(tableName = "group_memberships",
     foreignKeys = [
@@ -30,5 +31,5 @@ data class GroupMembershipEntity(
     @PrimaryKey(autoGenerate = true) val groupMembershipId: Long = 0,
     val group_id: Long,
     val profile_id: Long,
-    val isModerator: Boolean
+    val role: GroupMemberRole
 )

@@ -4,6 +4,7 @@ import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.Index
 import androidx.room.PrimaryKey
+import com.vpr.places_together.utils.enums.MarkPlaceStatus
 
 @Entity(tableName = "group_place_marks",
     foreignKeys = [
@@ -29,5 +30,5 @@ data class GroupPlaceMarkEntity(
     @PrimaryKey(autoGenerate = true) val groupPlaceMarkId: Long = 0,
     val group_place_id: Long,
     val profile_id: Long,
-    val status: String
+    val status: MarkPlaceStatus
 )

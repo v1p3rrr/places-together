@@ -2,7 +2,27 @@ package com.vpr.places_together.di
 
 import android.content.Context
 import androidx.room.Room
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
+import com.vpr.places_together.BuildConfig
+import com.vpr.places_together.R
 import com.vpr.places_together.data.local.database.PlacesTogetherDatabase
+import com.vpr.places_together.data.remote.service.AccountProfileApiService
+import com.vpr.places_together.data.remote.service.AuthService
+import com.vpr.places_together.data.remote.service.CommentApiService
+import com.vpr.places_together.data.remote.service.FriendshipApiService
+import com.vpr.places_together.data.remote.service.GoogleSignInService
+import com.vpr.places_together.data.remote.service.GroupApiService
+import com.vpr.places_together.data.remote.service.MarkGroupPlaceApiService
+import com.vpr.places_together.data.remote.service.PlaceApiService
+import com.vpr.places_together.data.remote.service.RatingApiService
+import com.vpr.places_together.data.repository.AuthRepositoryImpl
+import com.vpr.places_together.data.repository.SessionManager
+import com.vpr.places_together.domain.repository.AuthRepository
+import com.vpr.places_together.utils.LocalDateTimeDeserializer
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -13,17 +33,17 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.time.LocalDateTime
 import javax.inject.Singleton
+
 
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
 
-    private const val BASE_URL = "http://10.0.2.2:8080/"
+    private const val BASE_URL = "http://localhost:8080/"
 
-//    @Singleton
-//    @Provides
-//    fun provideRepository(service: sService, dao: Dao): Repository = RepositoryImpl(api = service, dao = dao)
+   
 
     @Singleton
     @Provides
@@ -35,6 +55,13 @@ object AppModule {
 
     @Singleton
     @Provides
+    fun provideGson(): Gson =
+        GsonBuilder().registerTypeAdapter(LocalDateTime::class.java, LocalDateTimeDeserializer())
+            .setLenient()
+            .create()
+
+    @Singleton
+    @Provides
     fun provideOkHttpClient(httpLoggingInterceptor: HttpLoggingInterceptor): OkHttpClient =
         OkHttpClient.Builder()
             .addInterceptor(httpLoggingInterceptor)
@@ -43,15 +70,51 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit = Retrofit.Builder()
+    fun provideRetrofit(okHttpClient: OkHttpClient, gson: Gson): Retrofit = Retrofit.Builder()
         .baseUrl(BASE_URL)
         .client(okHttpClient)
-        .addConverterFactory(GsonConverterFactory.create())
+        .addConverterFactory(GsonConverterFactory.create(gson))
         .build()
 
-//    @Singleton
-//    @Provides
-//    fun providesService(retrofit: Retrofit): sService = retrofit.create(sService::class.java)
+    @Singleton
+    @Provides
+    fun provideAuthService(retrofit: Retrofit): AuthService =
+        retrofit.create(AuthService::class.java)
+
+    @Singleton
+    @Provides
+    fun provideAccountProfileApiService(retrofit: Retrofit): AccountProfileApiService =
+        retrofit.create(AccountProfileApiService::class.java)
+
+    @Singleton
+    @Provides
+    fun provideCommentApiService(retrofit: Retrofit): CommentApiService =
+        retrofit.create(CommentApiService::class.java)
+
+    @Singleton
+    @Provides
+    fun provideFriendshipApiService(retrofit: Retrofit): FriendshipApiService =
+        retrofit.create(FriendshipApiService::class.java)
+
+    @Singleton
+    @Provides
+    fun provideGroupApiService(retrofit: Retrofit): GroupApiService =
+        retrofit.create(GroupApiService::class.java)
+
+    @Singleton
+    @Provides
+    fun provideMarkGroupPlaceApiService(retrofit: Retrofit): MarkGroupPlaceApiService =
+        retrofit.create(MarkGroupPlaceApiService::class.java)
+
+    @Singleton
+    @Provides
+    fun providePlaceApiService(retrofit: Retrofit): PlaceApiService =
+        retrofit.create(PlaceApiService::class.java)
+
+    @Singleton
+    @Provides
+    fun provideRatingApiService(retrofit: Retrofit): RatingApiService =
+        retrofit.create(RatingApiService::class.java)
 
     @Singleton
     @Provides
@@ -101,5 +164,5 @@ object AppModule {
     @Singleton
     @Provides
     fun provideRatingPlaceDao(database: PlacesTogetherDatabase) = database.ratingPlaceDao()
-    
+
 }

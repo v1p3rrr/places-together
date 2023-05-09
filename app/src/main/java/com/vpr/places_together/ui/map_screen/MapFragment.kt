@@ -6,10 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import com.vpr.places_together.R
-import com.vpr.places_together.databinding.FragmentLoginBinding
 import com.vpr.places_together.databinding.FragmentMapBinding
-import com.vpr.places_together.ui.login_screen.LoginViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import ru.dgis.sdk.Context
 import ru.dgis.sdk.DGis
@@ -40,5 +37,6 @@ class MapFragment: Fragment() {
             // Действия с картой
             val camera = map.camera
         }
+        viewModel.test()
     }
 }

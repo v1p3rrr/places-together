@@ -7,6 +7,8 @@ import com.vpr.places_together.data.local.dao.*
 import com.vpr.places_together.data.local.entity.*
 import com.vpr.places_together.data.local.typeconverter.LocalDateTimeConverter
 import com.vpr.places_together.data.local.typeconverter.FriendshipStatusTypeConverter
+import com.vpr.places_together.data.local.typeconverter.GroupMemberRoleTypeConverter
+import com.vpr.places_together.data.local.typeconverter.MarkPlaceStatusTypeConverter
 
 
 @Database(
@@ -25,7 +27,7 @@ import com.vpr.places_together.data.local.typeconverter.FriendshipStatusTypeConv
     version = 1,
     exportSchema = false
 )
-@TypeConverters(LocalDateTimeConverter::class, FriendshipStatusTypeConverter::class)
+@TypeConverters(LocalDateTimeConverter::class, FriendshipStatusTypeConverter::class, GroupMemberRoleTypeConverter::class, MarkPlaceStatusTypeConverter::class)
 abstract class PlacesTogetherDatabase : RoomDatabase() {
     abstract fun accountDao(): AccountDao
     abstract fun profileDao(): ProfileDao
